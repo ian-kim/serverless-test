@@ -48,4 +48,27 @@ Serverless: Excluding development dependencies...
      Serverless Version:     1.32.0
 ```
 
+### Default profile설정 후(실패)
+```
+➜  slack-notifiaction serverless deploy --aws-profile dev
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+
+  Serverless Error ---------------------------------------
+
+  ServerlessError: The request signature we calculated does not match the signature you provided. 
+  Check your AWS Secret Access Key and signing method. Consult the service documentation for details.
+
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Issues:        forum.serverless.com
+
+  Your Environment Information -----------------------------
+     OS:                     darwin
+     Node Version:           8.12.0
+     Serverless Version:     1.32.0
+
+➜  slack-notifiaction
+```
 원인파악: 
