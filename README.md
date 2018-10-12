@@ -119,3 +119,6 @@ Serverless: Operation failed!
      Node Version:           8.12.0
      Serverless Version:     1.32.0
 ```
+
+# Link
+[Iam Policy in Serverless Framework](https://serverless-stack.com/chapters/customize-the-serverless-iam-policy.html)
