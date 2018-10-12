@@ -72,7 +72,7 @@ Serverless: Excluding development dependencies...
 ➜  slack-notifiaction
 ```
 
-### Lambda Full Access(실패)
+### Lambda Full Access 적용 후 실패(실패)
 ```
 ➜  slack-notifiaction serverless deploy --aws-profile dev -v
 Serverless: Packaging service...
