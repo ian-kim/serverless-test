@@ -120,5 +120,10 @@ Serverless: Operation failed!
      Serverless Version:     1.32.0
 ```
 
+### Serverless Framework의 경우 보안적인 이슈로 사용 불허
+- CloudFormation권한 필요
+- Iam role passrole 권한 필요
+
+
 # Link
 [Iam Policy in Serverless Framework](https://serverless-stack.com/chapters/customize-the-serverless-iam-policy.html)
