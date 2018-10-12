@@ -71,4 +71,51 @@ Serverless: Excluding development dependencies...
 
 ➜  slack-notifiaction
 ```
-원인파악: 
+
+### Lambda Full Access(실패)
+```
+➜  slack-notifiaction serverless deploy --aws-profile dev -v
+Serverless: Packaging service...
+Serverless: Excluding development dependencies...
+Serverless: Creating Stack...
+Serverless: Checking Stack create progress...
+CloudFormation - CREATE_IN_PROGRESS - AWS::CloudFormation::Stack - slack-notifiaction-dev
+CloudFormation - CREATE_IN_PROGRESS - AWS::S3::Bucket - ServerlessDeploymentBucket
+CloudFormation - CREATE_IN_PROGRESS - AWS::S3::Bucket - ServerlessDeploymentBucket
+CloudFormation - CREATE_COMPLETE - AWS::S3::Bucket - ServerlessDeploymentBucket
+CloudFormation - CREATE_COMPLETE - AWS::CloudFormation::Stack - slack-notifiaction-dev
+Serverless: Stack create finished...
+Serverless: Uploading CloudFormation file to S3...
+Serverless: Uploading artifacts...
+Serverless: Uploading service .zip file to S3 (387 B)...
+Serverless: Validating template...
+Serverless: Updating Stack...
+Serverless: Checking Stack update progress...
+CloudFormation - UPDATE_IN_PROGRESS - AWS::CloudFormation::Stack - slack-notifiaction-dev
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - HelloLogGroup
+CloudFormation - CREATE_IN_PROGRESS - AWS::IAM::Role - IamRoleLambdaExecution
+CloudFormation - CREATE_IN_PROGRESS - AWS::Logs::LogGroup - HelloLogGroup
+CloudFormation - CREATE_FAILED - AWS::IAM::Role - IamRoleLambdaExecution
+CloudFormation - CREATE_COMPLETE - AWS::Logs::LogGroup - HelloLogGroup
+CloudFormation - UPDATE_ROLLBACK_IN_PROGRESS - AWS::CloudFormation::Stack - slack-notifiaction-dev
+CloudFormation - UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS - AWS::CloudFormation::Stack - slack-notifiaction-dev
+CloudFormation - DELETE_IN_PROGRESS - AWS::Logs::LogGroup - HelloLogGroup
+CloudFormation - DELETE_COMPLETE - AWS::IAM::Role - IamRoleLambdaExecution
+CloudFormation - DELETE_COMPLETE - AWS::Logs::LogGroup - HelloLogGroup
+CloudFormation - UPDATE_ROLLBACK_COMPLETE - AWS::CloudFormation::Stack - slack-notifiaction-dev
+Serverless: Operation failed!
+
+  Serverless Error ---------------------------------------
+
+  An error occurred: IamRoleLambdaExecution - API: iam:CreateRole User: arn:aws:iam::905136931838:user/devops-cli is not authorized to perform: iam:CreateRole on resource: arn:aws:iam::905136931838:role/slack-notifiaction-dev-ap-northeast-2-lambdaRole.
+
+  Get Support --------------------------------------------
+     Docs:          docs.serverless.com
+     Bugs:          github.com/serverless/serverless/issues
+     Issues:        forum.serverless.com
+
+  Your Environment Information -----------------------------
+     OS:                     darwin
+     Node Version:           8.12.0
+     Serverless Version:     1.32.0
+```
